@@ -28,6 +28,15 @@ target/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
+/src/main/resources/static/built/
 
 ### VS Code ###
 .vscode/
+
+### Node Modules ###
+/node_modules/
+
+### Database ###
+Database/
+Database/data.mv.db
+*.db
