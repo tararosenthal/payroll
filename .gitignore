@@ -40,3 +40,6 @@ build/
 Database/
 Database/data.mv.db
 *.db
+
+### Package ###
+package-lock.json
