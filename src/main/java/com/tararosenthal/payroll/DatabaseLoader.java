@@ -15,6 +15,8 @@
 //
 //    @Override
 //    public void run(String... args) throws Exception {
-//        this.repository.save(new Employee("Frodo", "Baggins", "ring bearer"));
+//        this.repository.save(new Employee("Gandalf", "the Grey", "wizard"));
+//        this.repository.save(new Employee("Meriadoc", "Brandybuck", "pony rider"));
+//        this.repository.save(new Employee("Peregrin", "Took", "pipe smoker"));
 //    }
 //}
