@@ -1,5 +1,7 @@
 package com.tararosenthal.payroll;
 
+import net.minidev.json.annotate.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -12,6 +14,7 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String description;
+    private @Version @JsonIgnore Long version;
 
     private Employee() {}
 
@@ -23,7 +26,7 @@ public class Employee {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, description);
+        return Objects.hash(id, firstName, lastName, description, version);
     }
 
     @Override
@@ -38,13 +41,14 @@ public class Employee {
         return Objects.equals(id, employee.id) &&
                 Objects.equals(firstName, employee.firstName) &&
                 Objects.equals(lastName, employee.lastName) &&
-                Objects.equals(description, employee.description);
+                Objects.equals(description, employee.description) &&
+                Objects.equals(version, employee.version);
     }
 
     @Override
     public String toString() {
-        return String.format("Employee{id=%d, firstName='%s', lastName='%s', description='%s'}",
-                id, firstName, lastName, description);
+        return String.format("Employee{id=%d, firstName='%s', lastName='%s', description='%s', version=%d}",
+                id, firstName, lastName, description, version);
     }
 
     public Long getId() {
@@ -77,5 +81,13 @@ public class Employee {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Long getVersion() {
+        return version;
+    }
+
+    public void setVersion(Long version) {
+        this.version = version;
     }
 }
